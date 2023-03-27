@@ -19,4 +19,10 @@ router.post('/'  , async (req, res)=>{
   }
 })
 
+// {Read/Fetch Operation} Read All
+router.get("/readall", async (req, res) => {
+    const users = await Login.find({}); // fetch all Dispatch Entries
+    res.json(users);
+  });
+
 module.exports = router
